@@ -1,0 +1,38 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+}
+
+.navTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navCart {
+  margin: 0;
+}
+
+.navCart svg {
+  margin-right: 0.5em;
+}
+
+.navCart button {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  background: none;
+  padding: 0.4em 0.7em;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.navCart button:hover {
+  background: black;
+  color: white;
+}
