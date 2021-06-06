@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
+import { initiateCheckout } from "../lib/payments";
+
 import products from "../products.json";
 
 export default function Home() {
@@ -29,6 +31,23 @@ export default function Home() {
                 <p>R${product.price}</p>
                 <p>{product.description}</p>
               </a>
+              <p>
+                <button
+                  className={styles.button}
+                  onClick={() =>
+                    initiateCheckout({
+                      lineItems: [
+                        {
+                          price: product.id,
+                          quantity: 1,
+                        },
+                      ],
+                    })
+                  }
+                >
+                  Buy Now
+                </button>
+              </p>
             </li>
           ))}
         </ul>
