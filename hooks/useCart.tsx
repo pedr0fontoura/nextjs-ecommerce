@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 
 import { initiateCheckout } from "../lib/payments";
 
@@ -28,6 +28,8 @@ interface ICartContext {
   checkout(): void;
 }
 
+const LOCAL_STORAGE_CART_ITEM_KEY = "@spacejellystore:cart";
+
 const defaultCart = {
   products: [],
 };
@@ -36,6 +38,20 @@ const CartContext = createContext<ICartContext>({} as ICartContext);
 
 const CartProvider = ({ children }: ICartProvider) => {
   const [cart, setCart] = useState<ICart>(defaultCart);
+
+  useEffect(() => {
+    const cachedCart = window.localStorage.getItem(LOCAL_STORAGE_CART_ITEM_KEY);
+
+    const parsedCart = cachedCart ? JSON.parse(cachedCart) : undefined;
+
+    setCart(parsedCart ? parsedCart : defaultCart);
+  }, []);
+
+  useEffect(() => {
+    const data = JSON.stringify(cart);
+
+    window.localStorage.setItem(LOCAL_STORAGE_CART_ITEM_KEY, data);
+  }, [cart]);
 
   const cartItems = cart.products.map((cartProduct) => {
     const product = products.find(({ id }) => id === cartProduct.id);
