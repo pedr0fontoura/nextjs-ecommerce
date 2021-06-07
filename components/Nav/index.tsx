@@ -21,9 +21,11 @@ const Nav = () => {
         <a className={styles.navTitle}>Space Jelly Shop</a>
       </Link>
       <p className={styles.navCart}>
-        <button onClick={checkout}>
-          <FaShoppingCart /> R${subtotal}
-        </button>
+        <Link href="/cart">
+          <a>
+            <FaShoppingCart /> R${subtotal}
+          </a>
+        </Link>
       </p>
     </nav>
   );

@@ -21,7 +21,14 @@ interface ICartProvider {
   children: React.ReactNode;
 }
 
+interface ICartItem {
+  id: string;
+  quantity: number;
+  pricePerItem: number;
+}
+
 interface ICartContext {
+  cartItems: ICartItem[];
   subtotal: number;
   totalItems: number;
   addToCart(args: IAddToCart): void;
@@ -58,7 +65,7 @@ const CartProvider = ({ children }: ICartProvider) => {
 
     return {
       ...cartProduct,
-      pricePerItem: product?.price,
+      pricePerItem: product?.price ? product.price : 0,
     };
   });
 
@@ -106,6 +113,7 @@ const CartProvider = ({ children }: ICartProvider) => {
   return (
     <CartContext.Provider
       value={{
+        cartItems,
         subtotal,
         totalItems,
         addToCart,
