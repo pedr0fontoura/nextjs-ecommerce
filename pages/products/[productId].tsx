@@ -43,7 +43,7 @@ const Product = ({ product }: IProduct) => {
 
           <p>
             <button className={styles.button} onClick={() => addToCart({ id })}>
-              Buy
+              Add to Cart
             </button>
           </p>
         </div>

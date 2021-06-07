@@ -145,6 +145,11 @@
   border: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+  background-color: rgb(108, 23, 187);
 }
 
 .button:disabled {
@@ -228,7 +233,7 @@
 }
 
 .removeButton:hover {
-  opacity: 0.8;
+  color: rgb(108, 23, 187);
 }
 
 .checkout {

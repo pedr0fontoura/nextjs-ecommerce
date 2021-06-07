@@ -8,7 +8,7 @@ import { useCart } from "../hooks/useCart";
 import products from "../products.json";
 
 export default function Home() {
-  const { subtotal, totalItems, addToCart, checkout } = useCart();
+  const { addToCart } = useCart();
 
   return (
     <div className={styles.container}>
