@@ -128,7 +128,6 @@ const CartProvider = ({ children }: ICartProvider) => {
 
   const updateQuantity = ({ id, quantity }: IUpdateQuantity): void => {
     if (quantity <= 0) {
-      removeFromCart({ id });
       return;
     }
 
