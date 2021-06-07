@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
@@ -27,12 +28,14 @@ export default function Home() {
         <ul className={styles.grid}>
           {products.map((product) => (
             <li key={product.id} className={styles.card}>
-              <a href="#">
-                <img src={product.image} alt={product.title} />
-                <h2>{product.title}</h2>
-                <p>R${product.price}</p>
-                <p>{product.description}</p>
-              </a>
+              <Link href={`/products/${product.id}`}>
+                <a>
+                  <img src={product.image} alt={product.title} />
+                  <h2>{product.title}</h2>
+                  <p>R${product.price}</p>
+                  <p>{product.description}</p>
+                </a>
+              </Link>
               <p>
                 <button
                   className={styles.button}
