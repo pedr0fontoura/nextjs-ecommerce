@@ -18,3 +18,10 @@ a {
 img {
   max-width: 100%;
 }
+
+button {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

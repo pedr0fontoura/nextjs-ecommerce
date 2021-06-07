@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaMinus, FaPlus } from "react-icons/fa";
 
 import styles from "../styles/Cart.module.css";
 
@@ -9,7 +9,8 @@ import { useCart } from "../hooks/useCart";
 import products from "../products.json";
 
 const Cart = () => {
-  const { cartItems, subtotal, checkout } = useCart();
+  const { cartItems, subtotal, updateQuantity, removeFromCart, checkout } =
+    useCart();
 
   return (
     <div className={styles.container}>
@@ -49,14 +50,43 @@ const Cart = () => {
                       <span>R${product.price}</span>
                     </div>
                   </td>
-                  <td>{cartItem.quantity}</td>
+                  <td>
+                    <div className={styles.productQuantity}>
+                      <button
+                        onClick={() =>
+                          updateQuantity({
+                            id: product.id,
+                            quantity: cartItem.quantity - 1,
+                          })
+                        }
+                      >
+                        <FaMinus />
+                      </button>
+                      <span>{cartItem.quantity}</span>
+                      <button
+                        onClick={() =>
+                          updateQuantity({
+                            id: product.id,
+                            quantity: cartItem.quantity + 1,
+                          })
+                        }
+                      >
+                        <FaPlus />
+                      </button>
+                    </div>
+                  </td>
                   <td>
                     <strong>
                       R${cartItem.pricePerItem * cartItem.quantity}
                     </strong>
                   </td>
                   <td>
-                    <FaTrash />
+                    <button
+                      className={styles.removeButton}
+                      onClick={() => removeFromCart({ id: product.id })}
+                    >
+                      <FaTrash size={18} />
+                    </button>
                   </td>
                 </tr>
               );
@@ -66,9 +96,13 @@ const Cart = () => {
 
         <div className={styles.checkout}>
           <span>
-            <b>TOTAL:</b> R${subtotal}
+            TOTAL:<b> R${subtotal}</b>
           </span>
-          <button className={styles.button} onClick={checkout}>
+          <button
+            className={styles.button}
+            onClick={checkout}
+            disabled={cartItems.length === 0}
+          >
             Checkout
           </button>
         </div>

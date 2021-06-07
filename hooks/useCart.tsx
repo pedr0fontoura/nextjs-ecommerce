@@ -17,6 +17,15 @@ interface IAddToCart {
   id: string;
 }
 
+interface IRemoveFromCart {
+  id: string;
+}
+
+interface IUpdateQuantity {
+  id: string;
+  quantity: number;
+}
+
 interface ICartProvider {
   children: React.ReactNode;
 }
@@ -32,6 +41,8 @@ interface ICartContext {
   subtotal: number;
   totalItems: number;
   addToCart(args: IAddToCart): void;
+  removeFromCart(args: IRemoveFromCart): void;
+  updateQuantity(args: IUpdateQuantity): void;
   checkout(): void;
 }
 
@@ -80,7 +91,7 @@ const CartProvider = ({ children }: ICartProvider) => {
     return accumulator + quantity;
   }, 0);
 
-  function addToCart({ id }: IAddToCart): void {
+  const addToCart = ({ id }: IAddToCart): void => {
     setCart((previous) => {
       let cartState = { ...previous };
 
@@ -99,16 +110,51 @@ const CartProvider = ({ children }: ICartProvider) => {
 
       return cartState;
     });
-  }
+  };
 
-  function checkout(): void {
+  const removeFromCart = ({ id }: IRemoveFromCart): void => {
+    setCart((previous) => {
+      let cartState = { ...previous };
+
+      const filteredProducts = cartState.products.filter(
+        (product) => product.id !== id
+      );
+
+      cartState.products = filteredProducts;
+
+      return cartState;
+    });
+  };
+
+  const updateQuantity = ({ id, quantity }: IUpdateQuantity): void => {
+    if (quantity <= 0) {
+      removeFromCart({ id });
+      return;
+    }
+
+    setCart((previous) => {
+      let cartState = { ...previous };
+
+      const productIndex = cartState.products.findIndex(
+        (product) => product.id === id
+      );
+
+      if (productIndex !== -1) {
+        cartState.products[productIndex].quantity = quantity;
+      }
+
+      return cartState;
+    });
+  };
+
+  const checkout = (): void => {
     initiateCheckout({
       lineItems: cartItems.map((item) => ({
         price: item.id,
         quantity: item.quantity,
       })),
     });
-  }
+  };
 
   return (
     <CartContext.Provider
@@ -117,6 +163,8 @@ const CartProvider = ({ children }: ICartProvider) => {
         subtotal,
         totalItems,
         addToCart,
+        removeFromCart,
+        updateQuantity,
         checkout,
       }}
     >

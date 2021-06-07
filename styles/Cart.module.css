@@ -147,6 +147,10 @@
   cursor: pointer;
 }
 
+.button:disabled {
+  opacity: 0.5;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -179,6 +183,52 @@
 .productInfo {
   display: flex;
   align-items: center;
+}
+
+.productQuantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.productQuantity span {
+  padding: 0.3em 1em;
+  border-radius: 0.2em;
+  border: 1px solid rgb(221, 221, 221);
+}
+
+.productQuantity button {
+  height: 25px;
+  width: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: none;
+  background: none;
+  border: 2px solid blueviolet;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  color: blueviolet;
+
+  transition: all 0.1s ease-in-out;
+}
+
+.productQuantity button:hover {
+  background: blueviolet;
+  color: white;
+}
+
+.removeButton {
+  color: blueviolet;
+  transition: all 0.1s ease-in-out;
+}
+
+.removeButton:hover {
+  opacity: 0.8;
 }
 
 .checkout {
