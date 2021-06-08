@@ -9,7 +9,7 @@ import styles from "./Nav.module.css";
 const Nav = () => {
   const [origin, setOrigin] = useState("#");
 
-  const { subtotal, checkout } = useCart();
+  const { subtotal } = useCart();
 
   useEffect(() => {
     setOrigin(window.location.origin);
@@ -23,7 +23,7 @@ const Nav = () => {
       <p className={styles.navCart}>
         <Link href="/cart">
           <a>
-            <FaShoppingCart /> R${subtotal}
+            <FaShoppingCart /> R${subtotal.toFixed(2)}
           </a>
         </Link>
       </p>

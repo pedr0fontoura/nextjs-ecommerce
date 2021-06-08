@@ -47,7 +47,7 @@ const Cart = () => {
                     <img src={product.image} alt={product.title} />
                     <div>
                       <strong>{product.title}</strong>
-                      <span>R${product.price}</span>
+                      <span>R${product.price.toFixed(2)}</span>
                     </div>
                   </td>
                   <td>
@@ -77,7 +77,7 @@ const Cart = () => {
                   </td>
                   <td>
                     <strong>
-                      R${cartItem.pricePerItem * cartItem.quantity}
+                      R${(cartItem.pricePerItem * cartItem.quantity).toFixed(2)}
                     </strong>
                   </td>
                   <td>
@@ -96,7 +96,7 @@ const Cart = () => {
 
         <div className={styles.checkout}>
           <span>
-            TOTAL:<b> R${subtotal}</b>
+            TOTAL:<b> R${subtotal.toFixed(2)}</b>
           </span>
           <button
             className={styles.button}
