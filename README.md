@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js eCommerce
 
-## Getting Started
+This is a simple demo project of an eCommerce store built using TypeScript, Next.js and Stripe.
 
-First, run the development server:
+The idea behind the project was to practice and experiment with Next.js SSR, dynamic routing and Stripe's solutions such as the product list and the client-side checkout. Other techs used in this project worth mentioning are the React Hooks and React Context API for global state management.
+
+This application was developed during [`Colby Fayock's`](https://twitter.com/colbyfayock) workshop at [`egghead.io`](https://egghead.io/).
+
+## Running Locally
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone https://github.com/pedr0fontoura/nextjs-ecommerce.git
+$ cd nextjs-ecommerce
+$ yarn
+$ yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Follow the [`.env.example`](https://github.com/pedr0fontoura/nextjs-ecommerce/blob/master/.env.example) to create your `.env.local`.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Don't forget to update the `products.json` list with your own products registered on Stripe's dashboard.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js app.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fpedr0fontoura%2Fnextjs-ecommerce&env=NEXT_PUBLIC_STRIPE_API_KEY&envDescription=Stripe%20API%20key)
+
+## Built Using
+
+- [Next.js](https://nextjs.org)
+- [Vercel](https://vercel.com)
+- [Stripe](https://stripe.com)
+
+## License
+
+This project is under the MIT license. Check the [`license`](https://github.com/pedr0fontoura/nextjs-ecommerce/blob/master/LICENSE) for more information.
+
+Made by Pedro Fontoura 😎 [Get in touch!](https://www.linkedin.com/in/pffrd/)
