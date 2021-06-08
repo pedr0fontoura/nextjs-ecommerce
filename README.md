@@ -9,9 +9,9 @@ This application was developed during [Colby Fayock's](https://twitter.com/colby
 ## Preview
 
 <div align="center">
-    <img alt="Next.js eCommerce - Home" src="https://i.imgur.com/WO31xzX.png" style="border-radius: 4px; width: 600px; height: 400px;" />
-    <img alt="Next.js eCommerce - Product" src="https://i.imgur.com/slDBNPd.png" style="border-radius: 4px; width: 600px; height: 400px;" />
-    <img alt="Next.js eCommerce - Cart" src="https://i.imgur.com/u8y4JTi.png" style="border-radius: 4px; width: 600px; height: 400px;" />
+    <img alt="Next.js eCommerce - Home" src="https://i.imgur.com/bPk9Uzw.png"/>
+    <img alt="Next.js eCommerce - Product" src="https://i.imgur.com/KdrhAw7.png"/>
+    <img alt="Next.js eCommerce - Cart" src="https://i.imgur.com/ziK8ATZ.png"/>
 </div>
 
 ## Running Locally
