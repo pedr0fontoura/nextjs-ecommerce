@@ -4,14 +4,29 @@ This is a simple demo project of an eCommerce store built using TypeScript, Next
 
 The idea behind the project was to practice and experiment with Next.js SSR, dynamic routing and Stripe's solutions such as the product list and the client-side checkout. Other techs used in this project worth mentioning are the React Hooks and React Context API for global state management.
 
-This application was developed during [`Colby Fayock's`](https://twitter.com/colbyfayock) workshop at [`egghead.io`](https://egghead.io/).
+This application was developed during [Colby Fayock's](https://twitter.com/colbyfayock) workshop at [egghead.io](https://egghead.io/).
+
+## Preview
+
+<div align="center">
+    <img alt="Next.js eCommerce - Home" src="https://i.imgur.com/WO31xzX.png" style="border-radius: 4px; width: 600px; height: 400px;" />
+    <img alt="Next.js eCommerce - Product" src="https://i.imgur.com/slDBNPd.png" style="border-radius: 4px; width: 600px; height: 400px;" />
+    <img alt="Next.js eCommerce - Cart" src="https://i.imgur.com/u8y4JTi.png" style="border-radius: 4px; width: 600px; height: 400px;" />
+</div>
 
 ## Running Locally
 
 ```bash
+# Clone the repository
 $ git clone https://github.com/pedr0fontoura/nextjs-ecommerce.git
+
+# Navigate into the repository
 $ cd nextjs-ecommerce
+
+# Install dependencies
 $ yarn
+
+# Run the application
 $ yarn dev
 ```
 
@@ -33,6 +48,6 @@ The easiest way to deploy your Next.js app.
 
 ## License
 
-This project is under the MIT license. Check the [`license`](https://github.com/pedr0fontoura/nextjs-ecommerce/blob/master/LICENSE) for more information.
+This project is under the MIT license. Check the [license](https://github.com/pedr0fontoura/nextjs-ecommerce/blob/master/LICENSE) for more information.
 
 Made by Pedro Fontoura 😎 [Get in touch!](https://www.linkedin.com/in/pffrd/)
