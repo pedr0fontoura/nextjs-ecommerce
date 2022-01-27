@@ -1,6 +1,6 @@
-# Next.js eCommerce
+# Next.js e-commerce
 
-This is a simple demo project of an eCommerce store built using TypeScript, Next.js and Stripe.
+This is a simple demo project of an e-commerce store built using TypeScript, Next.js and Stripe.
 
 The idea behind the project was to practice and experiment with Next.js SSR, dynamic routing and Stripe's solutions such as the product list and the client-side checkout. Other techs used in this project worth mentioning are the React Hooks and React Context API for global state management.
 
@@ -9,9 +9,9 @@ This application was developed during [Colby Fayock's](https://twitter.com/colby
 ## Preview
 
 <div align="center">
-    <img alt="Next.js eCommerce - Home" src="https://i.imgur.com/bPk9Uzw.png"/>
-    <img alt="Next.js eCommerce - Product" src="https://i.imgur.com/KdrhAw7.png"/>
-    <img alt="Next.js eCommerce - Cart" src="https://i.imgur.com/ziK8ATZ.png"/>
+    <img alt="Next.js e-commerce - Home" src="https://i.imgur.com/bPk9Uzw.png"/>
+    <img alt="Next.js e-commerce - Product" src="https://i.imgur.com/KdrhAw7.png"/>
+    <img alt="Next.js e-commerce - Cart" src="https://i.imgur.com/ziK8ATZ.png"/>
 </div>
 
 ## Running Locally
